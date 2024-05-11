@@ -97,6 +97,11 @@ class Wav2Lip(nn.Module):
             x = face_sequences
             for f in self.face_encoder_blocks:
                 x = f(x)
+                feats.append(x)
+
+            x = audio_sequences
+            for f in self.face_decoder_blocks:
+                
                 try:
                     x = torch.cat((x, feats[-1]), dim=1)
                 except Exception as e:
