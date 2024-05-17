@@ -39,6 +39,6 @@ class Conv2dTranspose(nn.Module):
         )
         self.relu_activation = nn.ReLU()
 
-        def forward(self, x):
-            out = self.conv_block(x)
-            return self.relu_activation(out)
+    def forward(self, x):
+        out = self.conv_block(x)
+        return self.relu_activation(out)
